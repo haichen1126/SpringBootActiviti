@@ -28,7 +28,8 @@ public class rabbitmqTest {
                 return message;
             };*/
             rabbitTemplate.convertAndSend(RabbitMQConfig.TOPIC_EXCHANGE_BOOT,
-                    "direct_queue1", i+"");
+                    "direct_queue1",
+                    i+"");
 
         }
     }
