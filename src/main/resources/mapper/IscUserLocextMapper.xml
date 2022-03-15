@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hc.mapper.IscUserLocextMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hc.model.IscUserLocext">
+        <id column="ISC_ID" property="iscId"/>
+        <result column="RYMC" property="rymc"/>
+        <result column="SSBMID" property="ssbmid"/>
+        <result column="CJSJ" property="cjsj"/>
+        <result column="TBSJ" property="tbsj"/>
+        <result column="CXSJ" property="cxsj"/>
+        <result column="SFYX" property="sfyx"/>
+        <result column="RYZC" property="ryzc"/>
+        <result column="RYGW" property="rygw"/>
+        <result column="RYZY" property="ryzy"/>
+        <result column="RYXB" property="ryxb"/>
+        <result column="NXDH" property="nxdh"/>
+        <result column="ID" property="id"/>
+        <result column="SSDWID" property="ssdwid"/>
+        <result column="LOGINNAME" property="loginname"/>
+        <result column="OLDID" property="oldid"/>
+        <result column="SSDDJGID" property="ssddjgid"/>
+        <result column="SSDDJGMC" property="ssddjgmc"/>
+        <result column="syn_date" property="synDate"/>
+        <result column="SFPZSYM" property="sfpzsym"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ISC_ID, RYMC, SSBMID, CJSJ, TBSJ, CXSJ, SFYX, RYZC, RYGW, RYZY, RYXB, NXDH, ID, SSDWID, LOGINNAME, OLDID, SSDDJGID, SSDDJGMC, syn_date, SFPZSYM
+    </sql>
+
+    <select id="userList" resultMap="BaseResultMap">
+        select * from isc_user_locext limit 10
+
+    </select>
+
+</mapper>

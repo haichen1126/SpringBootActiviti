@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: SpringBootActiviti
+  http:
+    multipart:
+      maxFileSize: -1
+      maxRequestSize: -1
+  datasource:
+    url: jdbc:mysql://192.168.1.13:3306/ycxs1000?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Nari_jysp3.0
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package:  com.jydw.yjgk.model
+  check-config-location: false
+  executor-type: simple
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    jdbc-type-for-null: null
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    column-underline: true
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+mybatis:
+  call-setters-on-nulls: true

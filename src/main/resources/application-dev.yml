@@ -1,0 +1,75 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: SpringBootActiviti
+  redis:
+    database: 1
+    host: 192.168.1.12
+    port: 6379
+    password: Nari_jysp3.0
+    pool:
+      max-active: 300 #连接池最大数
+      max-idle: 300 #最大空闲连接数
+      max-wait: -1 #连接池最大阻塞等待时间
+      min-idle: 10 #连接池最小空闲连接
+      timeout: 5000
+
+
+  rabbitmq:
+    host: 192.168.1.129
+    port: 5672
+#    virtual-host: /
+    username: admin
+    password: admin
+#    template:
+#      # 必须设置成true 消息路由失败通知监听者，false 将消息丢弃
+#      mandatory: true
+
+
+
+  http:
+    multipart:
+      maxFileSize: -1
+      maxRequestSize: -1
+  datasource:
+    url: jdbc:mysql://192.168.1.12:3306/ycxs1000?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Nari_jysp3.0
+
+
+    #    process-definition-location-suffixes:
+    #      - **.bpmn
+    #      - **.bpmn20.xml
+
+  # activiti default configuration
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package:  com.jydw.yjgk.model
+  check-config-location: false
+  executor-type: simple
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    jdbc-type-for-null: null
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    column-underline: true
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+mybatis:
+  call-setters-on-nulls: true
+
+
+  # swagger
+swagger:
+  enabled: true
+  basic:
+    enable: true
+    username: admin
+    password: admin
+
